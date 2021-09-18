@@ -7,8 +7,7 @@
  *   // Expect: {name: string}
  *   Intersect<A, B>;
  */
-export type Intersect<T, U> = Pick<T, Extract<keyof T, keyof U>>;
-
+export declare type Intersect<T, U> = Pick<T, Extract<keyof T, keyof U>>;
 /**
  * UnionOmit
  * @desc Combine the two types and exclude the property that exist in `A` in `B`
@@ -18,8 +17,7 @@ export type Intersect<T, U> = Pick<T, Extract<keyof T, keyof U>>;
  *   // Expect: {value: string, disabled?: boolean; onChange: () => void}
  *   UnionOmit<A, B>;
  */
-export type UnionOmit<T, U> = T & Omit<T, keyof U>;
-
+export declare type UnionOmit<T, U> = T & Omit<T, keyof U>;
 /**
  * TupleUnion
  * @desc Converted array elements to union type
@@ -28,8 +26,7 @@ export type UnionOmit<T, U> = T & Omit<T, keyof U>;
  *   // Expect: 'a' | 'b' | 'c'
  *   TupleUnion<A>;
  */
-export type TupleUnion<T> = T extends Array<infer U> ? U : never;
-
+export declare type TupleUnion<T> = T extends Array<infer U> ? U : never;
 /**
  * RequireAtLeastOne
  * @desc A type where at least one of the properties of an interface (can be any property) is required to exist
@@ -38,7 +35,18 @@ export type TupleUnion<T> = T extends Array<infer U> ? U : never;
  *   // Expect: {name?: string; age: number;} | {name: string; age?: number;}
  *   RequireAtLeastOne<A>;
  */
-export type RequireAtLeastOne<T> = {
-  [K in keyof T]-?: Required<Pick<T, K>> &
-    Partial<Pick<T, Exclude<keyof T, K>>>;
+export declare type RequireAtLeastOne<T> = {
+    [K in keyof T]-?: Required<Pick<T, K>> & Partial<Pick<T, Exclude<keyof T, K>>>;
 }[keyof T];
+/**
+ * Weaken
+ * @desc A type where at least one of the properties of an interface (can be any property) is required to exist
+ * @example
+ *   type A = {name: string; say(word: string): string;}
+ *   type B = 'name'
+ *   // Expect: {name: any; say(word: string): string;}
+ *   Weaken<A, B>;
+ */
+export declare type Weaken<T, U extends keyof T> = {
+    [P in keyof T]: P extends U ? any : T[P];
+};
