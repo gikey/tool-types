@@ -1,11 +1,17 @@
 {
-  "name": "tools-types",
+  "name": "tool-types",
   "version": "0.0.1",
   "description": "Complementing TypeScript built-in types",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+      "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
 }
