@@ -59,7 +59,6 @@ export type RequireAtLeastOneByKeys<T, Keys extends keyof T = keyof T> = Pick<
         [K in Keys]-?: Required<Pick<T, K>> &
             Partial<Pick<T, Exclude<Keys, K>>>;
     }[Keys];
-
 /**
  * Weaken
  * @desc A type where at least one of the properties of an interface (can be any property) is required to exist

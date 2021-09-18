@@ -39,6 +39,17 @@ export declare type RequireAtLeastOne<T> = {
     [K in keyof T]-?: Required<Pick<T, K>> & Partial<Pick<T, Exclude<keyof T, K>>>;
 }[keyof T];
 /**
+ * RequireAtLeastOneByKeys
+ * @desc A type where at least one of the properties of an interface (can be any property) is required to exist
+ * @example
+ *   type A = {name: string; age: number; gender: number;}
+ *   // Expect: {name?: string; age: number; gender: number } | {name: string; age: number; gender?: number}
+ *   RequireAtLeastOneByKeys<A, 'name' | 'gender'>;
+ */
+export declare type RequireAtLeastOneByKeys<T, Keys extends keyof T = keyof T> = Pick<T, Exclude<keyof T, Keys>> & {
+    [K in Keys]-?: Required<Pick<T, K>> & Partial<Pick<T, Exclude<Keys, K>>>;
+}[Keys];
+/**
  * Weaken
  * @desc A type where at least one of the properties of an interface (can be any property) is required to exist
  * @example
