@@ -1,11 +1,21 @@
 {
     "name": "tool-types",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Complementing TypeScript built-in types",
     "files": [
+        "index.d.ts",
         "source"
     ],
-    "author": "",
+    "keywords": [
+        "tool-types",
+        "typescript types",
+        "utility types"
+    ],
+    "author": "lupingxie",
+    "homepage": "https://github.com/gikey/tool-types#readme",
+    "bugs": {
+        "url": "https://github.com/gikey/tool-types/issues"
+    },
     "license": "ISC",
     "devDependencies": {
         "typescript": "^4.4.3"
