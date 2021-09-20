@@ -1,17 +1,13 @@
 {
-  "name": "tool-types",
-  "version": "0.0.1",
-  "description": "Complementing TypeScript built-in types",
-  "main": "dist/index.js",
-  "files": [
-      "dist"
-  ],
-  "scripts": {
-    "build": "tsc"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "^4.4.3"
-  }
+    "name": "tool-types",
+    "version": "0.1.0",
+    "description": "Complementing TypeScript built-in types",
+    "files": [
+        "source"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "typescript": "^4.4.3"
+    }
 }
