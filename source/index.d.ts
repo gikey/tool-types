@@ -33,7 +33,7 @@ export type UnionOmit<T, U> = T & Omit<T, keyof U>;
 
 /**
  * TupleUnion
- * @desc 将数组（元组）值专为联合类型
+ * @desc 将元组值转为联合类型
  * @example
  *   type A = ['a', 'b', 'c'];
  *   // Expect: 'a' | 'b' | 'c'
