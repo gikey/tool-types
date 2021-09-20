@@ -3,6 +3,8 @@
 Complementing TypeScript built-in types.
 
 ![](https://img.shields.io/npm/v/tool-types?style=flat-square)
+![](https://img.shields.io/npm/dm/tool-types?style=flat-square)
+
 
 ## Installation
 ```sh
